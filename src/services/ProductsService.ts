@@ -16,7 +16,7 @@ export async function addProduct( data : ProductData) {
 
     if(result.success){
        const url = `${import.meta.env.VITE_API_URL}/api/products`
-       const {data} = await axios.post(url,{
+        await axios.post(url,{
         name: result.output.name,
         price: result.output.price
        })
@@ -76,7 +76,7 @@ export async function updateProduct(data: ProductData, id : Product['id']) {
     if(result.success){
       try {
         const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
-        const {data} = await axios.put(url, result.output)
+       await axios.put(url, result.output)
       } catch (error) {
         console.log(error)
       }
