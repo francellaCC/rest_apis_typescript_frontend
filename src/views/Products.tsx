@@ -20,7 +20,7 @@ export async function action({request}: ActionFunctionArgs) {
   const data = Object.fromEntries(await request.formData())
 
   await updateProductAvailability(+data.id)
-  return{}
+  return null
 }
 function Products() {
 
